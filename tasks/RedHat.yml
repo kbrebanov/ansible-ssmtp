@@ -1,2 +1,9 @@
 ---
 # tasks file for ssmtp (RedHat family specific)
+
+- name: Install sSMTP packages
+  package:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ ssmtp_packages }}"
+  tags: ssmtp
